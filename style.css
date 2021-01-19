@@ -1,0 +1,107 @@
+
+/*
+0.General
+1.header
+2.contenido
+3.footer
+4.mediaqueries
+*/
+
+
+/*
+0.General
+*/
+
+/*asignamos valores base para las cajas*/
+* {box-sizing: border-box;
+   margin:10px;
+   padding:10px;
+   }
+/*contenedor limitando ancho máximo*/
+.container{
+	max-width:1440px;
+	margin:auto;
+}
+
+/*3 cajas principales*/
+	header, main, footer {
+	background-color: #214151;
+	}
+
+/* 1.header
+*/
+/*cajas anidadas en flex*/
+	header { 
+		display: flex;
+		flex-flow: column nowrap;
+	}
+		.header-box {
+			display: flex;
+			flex-flow: row nowrap;
+			background-color: #a2d0c1;
+		}
+			.header-box-1, .header-box-2 {
+				flex: 1 1 auto;
+				background-color: #eff7e1;
+			}
+
+			.header-box-2 {
+				flex-grow: 3;
+			}
+		
+		.menu-principal {
+			background-color: #f8dc81;
+		}
+			.menu-item {
+				background-color: white;
+			}
+/*
+2.contenido
+*/
+	main { 
+		display:flex;
+	}
+		/*proporcion de las cajas en el contenedor main*/
+		.aside {
+			display:flex;
+			flex-flow: column nowrap;
+			background-color: #f8dc81;
+			flex-grow: 1;
+		}
+			.aside-box{
+				background-color: #fff;
+			}
+		.primary-content {
+			display:flex;
+			flex-flow: row wrap;
+			flex-grow: 2;
+			background-color: #a2d0c1;
+		}
+		/*proporcion de las cajas en el contenedor primary-content*/
+			.article {
+				flex: 2 2 40%;
+				background-color: #eff7e1;
+			}
+			.last-section {
+				flex: 1 1 100%;
+				background-color: #f8dc81;
+			}
+/*
+3.footer
+*/
+	.box-footer {
+		background-color: #f7f2e7;
+	}
+
+/*
+4.mediaqueries
+*/
+
+@media only screen and (max-width: 768px) {
+  /* responsive para tablet y movil*/
+ main { 
+		flex-flow: column wrap;
+		background-color: red;
+	}
+	
+}
